@@ -1,0 +1,22 @@
+{
+  "source": "placeholder — replace with curated stats (credit the provider)",
+  "updated": "",
+  "tiers": [
+    {
+      "tier": "S",
+      "heroes": []
+    },
+    {
+      "tier": "A",
+      "heroes": []
+    },
+    {
+      "tier": "B",
+      "heroes": []
+    },
+    {
+      "tier": "C",
+      "heroes": []
+    }
+  ]
+}

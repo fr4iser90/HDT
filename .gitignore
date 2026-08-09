@@ -1,0 +1,10 @@
+/target/
+**/*.rs.bk
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Generated / large card dumps (compact bg_enUS.json IS tracked)
+data/cards/cards.json
+data/cards/full_*.json

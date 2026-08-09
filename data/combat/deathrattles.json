@@ -1,0 +1,7 @@
+{
+  "_comment": "Minimal deathrattle summons for combat sim. Extend per patch; golden often doubles count.",
+  "BG36_200": [{ "card_id": "BG36_200t", "name": "Foraging Bat", "atk": 1, "health": 1, "count": 1 }],
+  "BG36_200_G": [{ "card_id": "BG36_200t", "name": "Foraging Bat", "atk": 1, "health": 1, "count": 2 }],
+  "BG28_603t": [],
+  "BG23_000": []
+}

@@ -39,7 +39,7 @@ Build only what HDT leaves open for Linux / NixOS Battlegrounds players — not 
 
 ## Status
 
-**Pre-MVP / documentation phase.** No gameplay pipeline yet.
+**Working spike:** log detection, card DB, combat odds (approx), and an in-game overlay HUD.
 
 See:
 
@@ -51,6 +51,38 @@ See:
 - [Detection & card data](docs/en/DETECTION.md)
 - [Contributing](CONTRIBUTING.md)
 
+---
+
+## Try it now (Linux / Proton)
+
+```bash
+cargo run -p bgc-cli -- doctor
+cargo run -p bgc-cli -- setup
+cargo run -p bgc-cli -- cards sync   # optional: refresh card DB
+```
+
+1. **Fully quit** Hearthstone (and restart Battle.net/HS so a new `Logs/Hearthstone_*` session starts).
+2. Confirm a growing `Power.log` exists (doctor warns if it stays tiny).
+3. Open the **in-game overlay** (recommended) **or** CLI watch:
+
+```bash
+# Overlay glued to the Hearthstone window
+# On NixOS this auto-wraps with `steam-run` (needed for X11 libs).
+cargo run -p bgc-ui
+# or: cargo run -p bgc-cli -- ui
+# or: ./scripts/run-overlay.sh
+
+# Text-only
+cargo run -p bgc-cli -- watch
+```
+
+The overlay is a transparent always-on-top layer over HS: only the HUD panels receive mouse input; everything else clicks through to the game. Panel positions and **slot calibration** are saved to `~/.config/bgc/overlay_layout.json`. In **Highlights → calibrate slots**, drag the shop/board/lobby boxes (and their edges) onto the minions — no number entry.
+
+**NixOS note:** if `cargo` itself crashes with a poisoned AppImage `LD_LIBRARY_PATH`, run:
+
+```bash
+env -u LD_LIBRARY_PATH cargo run -p bgc-ui
+```
 ---
 
 ## Planned MVP (v0.1)
